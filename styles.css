@@ -1,0 +1,61 @@
+/* ============================================================
+   ДИЗАЙН-ТОКЕНЫ
+   Меняй значения ниже, чтобы полностью переоформить приложение.
+   Логика (app.jsx) их не трогает — только читает.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Source+Sans+3:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap');
+
+:root {
+  /* --- база --- */
+  --color-ink: #23261F;        /* основной текст / акценты */
+  --color-paper: #F3F1EA;      /* фон страницы */
+  --color-paper-deep: #EAE6DA; /* фон карточек */
+  --color-line: #D8D3C4;       /* границы, разделители */
+  --color-muted: #8A8571;      /* второстепенный текст */
+  --color-danger-bg: #F0DCD5;
+  --color-danger-text: #7A2E1B;
+
+  /* --- палитра для дел (можно менять/добавлять hex-цвета) --- */
+  --palette: #3E6259, #C98A3E, #B5533C, #3E4C8A, #8A5A3E, #6B3E5F, #4A7A8C, #7A7A3E;
+
+  /* --- шрифты --- */
+  --font-display: 'Fraunces', serif;      /* заголовки */
+  --font-body: 'Source Sans 3', ui-sans-serif, system-ui, sans-serif; /* текст */
+  --font-mono: 'IBM Plex Mono', monospace; /* метки, время, цифры */
+
+  /* --- геометрия --- */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --row-height: 56px; /* высота часа в почасовой сетке */
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+#root { min-height: 100vh; }
+
+button, input, select {
+  font-family: inherit;
+  color: inherit;
+}
+
+input[type="date"]::-webkit-calendar-picker-indicator,
+input[type="time"]::-webkit-calendar-picker-indicator {
+  opacity: 0.6;
+}
+
+::selection { background: var(--color-ink); color: var(--color-paper); }
+
+/* Скроллбар — тонкий, в цвет темы (necaus webkit only, безопасно деградирует) */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-thumb { background: var(--color-line); border-radius: 8px; }
